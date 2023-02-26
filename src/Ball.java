@@ -98,12 +98,12 @@ public class Ball extends Sprite
 	 * @param size	The diameter of this Ball
 	 * @param c		The Color of this Ball
 	 */
-	public Ball(int x, int y, int size, Color c, Player1 player1Rect, Player2 player2Rect) {
+	public Ball(int x, int y, int size, Color c, Player1 player1Rect, Player2 player2Rect, int speed) {
 		mySize = size;
 		myPosXBall = x;
 		myPosYBall = y;
-		myDirX = 3;
-		myDirY = 3;
+		myDirX = speed;
+		myDirY = speed;
 		myColor = c;
 		prevColor = myColor;
 		Player1Rect = player1Rect;

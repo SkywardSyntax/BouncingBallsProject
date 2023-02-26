@@ -62,7 +62,6 @@ public class BouncingBallsGUI
 	// METHODS
 	// ------------------------------------------------------------
 	/** Constructs and adds multiple Ball objects to the Stage.
-	 *
 	 *  postcondition: Constructs and adds one Ball object for each
 	 *                   of the 3 Ball constructors to the Stage.
 	 *      algorithm: Declare a Ball variable called b1 and assign
@@ -80,9 +79,26 @@ public class BouncingBallsGUI
 	 */
 	private void addSprites()
 	{
-		Player1 Player1 = new Player1(10,0, 5, 10, 75, Color.RED);
-		Player2 Player2 = new Player2(380,0, 5, 10,75, Color.GREEN);
-		Ball b1 = new Ball(20,20,50,	Color.BLUE, Player1, Player2);
+		int ballSpeed = 0;
+		int paddleSpeed = 0;
+		String OS = System.getProperty("os.name").toLowerCase();
+
+		if (OS.equals("mac os x")){
+			System.out.println("Mac OS X detected");
+			ballSpeed = 1;
+			paddleSpeed = ballSpeed + 1;
+		}
+		else if ((OS.equals("windows 10")) || (OS.equals("windows 8")) || (OS.equals("windows 7"))||(OS.equals("windows 11"))){
+			System.out.println("Windows detected");
+			ballSpeed = 3;
+			paddleSpeed = ballSpeed + 2;
+		}
+		else{
+			System.exit(101);
+		}
+		Player1 Player1 = new Player1(10,0, paddleSpeed, 10, 75, Color.RED);
+		Player2 Player2 = new Player2(380,0, paddleSpeed, 10,75, Color.GREEN);
+		Ball b1 = new Ball(20,20,50,	Color.BLUE, Player1, Player2, ballSpeed);
 		myStage.add(b1);
 		myStage.add(Player1);
 		myStage.add(Player2);
