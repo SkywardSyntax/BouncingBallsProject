@@ -153,21 +153,25 @@ public class Ball extends Sprite
 			myDirX = -myDirX;
 			System.out.println("Player 2 Scored!");
 			P2Score++;
+			myColor = Color.RED;
 		}
 		if (myPosXBall + mySize > w-12 && myDirX > 0) {
 			myDirX = -myDirX;
 			System.out.println("Player 1 Scored!");
 			P1Score++;
+			myColor = Color.BLUE;
 		}
 		if (myPosYBall-12 < 0 && myDirY < 0) {
 			myDirY = -myDirY;
 		}
 		if (myPosYBall + mySize > h-12 && myDirY > 0) {
 			myDirY = -myDirY;
+
 		}
 		if (myPosXBall + mySize > Player1Rect.getMyPosXRect() && myPosXBall < Player1Rect.getMyPosXRect() + Player1Rect.getMyWidth() && myPosYBall + mySize > Player1Rect.getMyPosYRect() && myPosYBall < Player1Rect.getMyPosYRect() + Player1Rect.getMyHeight()) {
 			myDirX = -myDirX;
 			myDirY = myDirY;
+
 
 		}
 		if (myPosXBall + mySize > Player2Rect.getMyPosXRect() && myPosXBall < Player2Rect.getMyPosXRect() + Player2Rect.getMyWidth() && myPosYBall + mySize > Player2Rect.getMyPosYRect() && myPosYBall < Player2Rect.getMyPosYRect() + Player2Rect.getMyHeight()) {
@@ -175,9 +179,9 @@ public class Ball extends Sprite
 			myDirY = myDirY;
 
 		}
-
-
 	}
+
+
 
 
 	/** Draws a representation of the current state of this Ball

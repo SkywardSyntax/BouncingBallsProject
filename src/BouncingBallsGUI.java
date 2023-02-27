@@ -98,7 +98,7 @@ public class BouncingBallsGUI
 		}
 		Player1 Player1 = new Player1(10,0, paddleSpeed, 10, 75, Color.RED);
 		Player2 Player2 = new Player2(380,0, paddleSpeed, 10,75, Color.GREEN);
-		Ball b1 = new Ball(20,20,50,	Color.BLUE, Player1, Player2, ballSpeed);
+		Ball b1 = new Ball(20,20,50,	Color.GREEN, Player1, Player2, ballSpeed);
 		myStage.add(b1);
 		myStage.add(Player1);
 		myStage.add(Player2);
