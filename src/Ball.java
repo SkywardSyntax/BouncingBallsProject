@@ -151,15 +151,14 @@ public class Ball extends Sprite
 		int h = getStage().getHeight();
 		if (myPosXBall-12 < 0 && myDirX < 0) {
 			myDirX = -myDirX;
-			System.out.println("Player 2 Scored!");
+			System.out.println("\u001b[31mPlayer 2 Scored!");
 			P2Score++;
-			myColor = Color.RED;
+			prevColor = myColor;
 		}
 		if (myPosXBall + mySize > w-12 && myDirX > 0) {
 			myDirX = -myDirX;
-			System.out.println("Player 1 Scored!");
+			System.out.println("\u001b[32mPlayer 1 Scored!");
 			P1Score++;
-			myColor = Color.BLUE;
 		}
 		if (myPosYBall-12 < 0 && myDirY < 0) {
 			myDirY = -myDirY;
@@ -226,8 +225,8 @@ public class Ball extends Sprite
 	 */
 	public void keyPressed (Key k) {
 		if (k == Key.ESC) {
-			System.out.println("\nPlayer 1 Score: " + P1Score);
-			System.out.println("Player 2 Score: " + P2Score);
+			System.out.println("\n\u001b[32mPlayer 1 Score:\u001b[0m " + P1Score);
+			System.out.println("\n\u001b[31mPlayer 2 Score:\u001b[0m " + P2Score);
 			System.exit(0);
 		}
 		if (k == Key.SPACE){

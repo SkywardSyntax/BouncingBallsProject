@@ -27,6 +27,10 @@ public class Player1 extends Sprite {
 
     private Color prevColor = myColor;
 
+    private boolean isAtTop = false;
+
+    private boolean isAtBottom = false;
+
     public Player1(int xPos, int yPos, int speedY, int myWidth, int myHeight, Color myColor) {
         myPosXRect = xPos;
         myPosYRect = yPos;
@@ -61,9 +65,11 @@ public class Player1 extends Sprite {
         }
         if (myPosYRect-12 < 0 && myDirY < 0) {
             myDirY = 0;
+            isAtTop = true;
         }
         if (myPosYRect + myHeight > h-12 && myDirY > 0) {
             myDirY = 0;
+            isAtBottom = true;
         }
     }
 
@@ -111,14 +117,14 @@ public class Player1 extends Sprite {
     }
     public void keyPressed (Key k) {
         if (k == Key.W) {
-            if (myDirY > 0){
+            if (myDirY > 0) {
                 myDirY *= -1;
             }
             if (myDirY == 0) {
-                myDirY = -1*prevMyDirY;
+                myDirY = -1 * prevMyDirY;
             }
-
         }
+
         if (k == Key.S) {
             if (myDirY < 0){
                 myDirY *= -1;
